@@ -1,0 +1,118 @@
+<div class="alert alert-success alert-dismissible fade show text-center" style="background-color:#83b14e;" role="alert">
+          <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <span style="color:white;">싱싱 고대는</span> <strong><span style="color:#b80f0a;">이렇게</span></strong> <span style="color:white;">운영되고 있습니다!</span>
+        </div>
+       
+        <nav class="navbar navbar-toggleable-md navbar-light ">
+             <div class="container">
+            <a class="navbar-brand" href="/"><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span style="color:#83b14e;">싱</span><span style="color:#617750;">싱</span><span style="color:#b80f0a;">고대</span></a>
+
+          <div class="collapse navbar-collapse offset-2 col-6">
+            <form class="form-inline my-2 my-lg-0 w-100">
+              <input class="form-control mr-lg-2 w-50" type="text" placeholder="검색하세요..">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+            <a href="/users/sign_in" class="mx-4">로그인</a><a href="/users/sign_out" class="logout">로그아웃</a>
+            </form>
+          </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/item_list">상품<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/basket">장바구니</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/information">건의사항</a>
+              </li>
+            </ul>
+               </div>
+        </nav>
+        
+     <div class="footer-above d-flex justify-content-center" style="background-color:#83b14e; color:white;height:10px; padding-top:10px">
+       
+          
+        </div>
+    </div>
+ 
+    <div class="container">
+    	<h3 class="my-5 text-center">건의사항 리스트</h3>
+    	<p class="titlecontents"><span class="ml-5">NO</span><span class="ml-5">건의분류</span><span class="ml-5">건의일자</span><span id="contents1">건의내용</span></p><hr style="border:1px solid black">
+        
+
+						
+							
+									<% @every_post.each do |p| %>
+										<p>
+										  <span class="ml-5 mr-3"><%= p.id %></span>
+										  <span class="ml-5 mr-1"><%= p.choice %></span>
+										  <span class="ml-4"><%= p.created_at.to_date %></span>
+										  <span id="contents2"><%= p.content %></span>
+										  <a href="/destroy/<%= p.id %>" class="ml-1 destroy"> [삭제]</a>
+										  <a href="/update_view/<%= p.id %>" class="ml-1 modify"> [수정]</a>
+										  <br>
+										  <div style="border:1px solid green">
+										  <% p.comments.each do |c| %>
+                       <p> 댓글 : <%= c.content %><a href="/destroy_comments/<%= c.id %>" class="destroy"> [x]</a></p>
+                      <% end %>
+										  </div>
+										  
+										</p>
+										<form action="/comment_create/<%= p.id %>" method="POST" class="mb-5">
+                     <div class="form-group row mt-3 offset-1">
+                     <input type="text" name="content" class="form-control ml-5 col-4 comments"  style="float:left" placeholder="댓글을 남겨주세요..">
+                     <button type="submit" class="btn btn-primary ml-5 save">댓글저장</button>
+                     </div>
+                     
+                   </form>
+									<% end %>
+									
+								</tbody>
+								
+							</table>
+							<a href="/information_write"><button class="btn btn-outline-success offset-10 mb-5">글쓰러가기</button></a>
+							</div>
+     <div class="footer-above d-flex justify-content-center" style="background-color:#83b14e; color:white;height:10px; padding-top:10px">
+</div>
+   <div class="footer-below d-flex justify-content-center " style="background-color:#466c33;color:white; height:10px; text-align: center;">
+     </div>
+     <div class="container">
+     <footer class="mt-5 mb-5" style="border-top-width:0px;">
+            <div class="ml-5 mt-3">
+                <a><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span class="green">싱싱</span><span class="red">고대</span></a>
+                <p>&copy; 2017 싱싱고대, All right reserved</p>
+                <p>세종특별자치시 세종로 2511 고려대학교 세종캠퍼스 LIKELION</p>
+                <p>☎ 044-864-0000</p>
+            </div>
+        </footer>
+        </div>
+        
+        <script>
+          $(document).ready(function(){
+            var $destroy = $(".destroy");
+            var $save = $(".save");
+            var $logout = $(".logout");
+            var $comments = $(".comments");
+            
+            $destroy.click(function(){
+              alert("해당 글을 삭제합니다.");
+            })
+            
+            $save.click(function(){
+              if($comments.val().length > 0){
+                alert("저장되었습니다.");
+              }
+              else if($comments.val().length <= 0){
+                alert("내용을 입력해주세요!");
+              }
+              
+            }) 
+            
+            $logout.click(function(){
+              alert("로그아웃 되었습니다. 안녕히가세요!");
+            })
+          })
+          
+    
+        </script>

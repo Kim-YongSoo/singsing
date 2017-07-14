@@ -1,0 +1,160 @@
+<div class="alert alert-success alert-dismissible fade show text-center" style="background-color:#83b14e;" role="alert">
+          <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <span style="color:white;">싱싱 고대는</span> <strong><span style="color:#b80f0a;">이렇게</span></strong> <span style="color:white;">운영되고 있습니다!</span>
+        </div>
+       
+        <nav class="navbar navbar-toggleable-md navbar-light ">
+             <div class="container">
+            <a class="navbar-brand" href="/"><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span style="color:#83b14e;">싱</span><span style="color:#617750;">싱</span><span style="color:#b80f0a;">고대</span></a>
+
+          <div class="collapse navbar-collapse offset-2 col-6">
+            <form class="form-inline my-2 my-lg-0 w-100">
+              <input class="form-control mr-lg-2 w-50 search" type="text" placeholder="검색하세요..">
+              <button class="btn btn-outline-success my-2 my-sm-0 searchBtn" type="submit">검색</button>
+            <a href="/users/sign_in" class="mx-4">로그인</a><a href="/users/sign_out">로그아웃</a>
+            </form>
+          </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/item_list">상품<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/basket">장바구니</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/information">건의사항</a>
+              </li>
+            </ul>
+               </div>
+        </nav>
+     <div class="footer-above d-flex justify-content-center" style="background-color:#83b14e; color:white;height:10px; padding-top:10px">
+        <div class="container">
+           
+        </div>
+    </div>
+
+   <div class="container">
+   <div class="card-group mt-5">
+          <div class="card">
+            <a href="#"><%= image_tag 'apple.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">사과</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦2,500(4개입)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <a href="#"><%= image_tag 'cherry.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">체리</h4>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted col-5">가격 : ￦3,000(150g)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <a href="#"><%= image_tag 'orange.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">오렌지</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦12,000(10개입)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-group mt-5">
+          <div class="card">
+            <a href="#"><%= image_tag 'mango.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">망고</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦3,000(5개입)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <a href="#"><%= image_tag 'kiwi.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">키위</h4>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦10,000(12개입)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <a href="#"><%= image_tag 'gam.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">감</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦6,000(8개입)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-group mt-5">
+          <div class="card">
+            <a href="#"><%= image_tag 'straw.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">딸기</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦9,000(300g)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <a href="#"><%= image_tag 'watermelon.jpeg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">수박</h4>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦4,500(½ 통)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+          <div class="card ml-4">
+            <a href="#"><%= image_tag 'banana.jpg', class:'card-img-top' %></a>
+            <div class="card-block">
+              <h4 class="card-title fruitname">바나나</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">가격 : ￦3,000(1송이)</small>
+                <button type="button" class="btn btn-outline-success ml-5">더 보기</button>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="footer-above d-flex justify-content-center mt-5" style="background-color:#83b14e; color:white;height:10px; padding-top:10px">
+</div>
+   <div class="footer-below d-flex justify-content-center " style="background-color:#466c33;color:white; height:10px; text-align: center;">
+     </div>
+     <div class="container mt-5 mb-5">
+     <footer class="mt-5" style="border-top-width:0px;">
+            <div class="ml-5 mt-3">
+                <a><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span class="green">싱싱</span><span class="red">고대</span></a>
+                <p>&copy; 2017 싱싱고대, All right reserved</p>
+                <p>세종특별자치시 세종로 2511 고려대학교 세종캠퍼스 LIKELION</p>
+                <p>☎ 044-864-0000</p>
+            </div>
+        </footer>
+        </div>
+        
+       

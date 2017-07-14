@@ -1,0 +1,96 @@
+<div class="alert alert-success alert-dismissible fade show text-center" style="background-color:#83b14e;" role="alert">
+    <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <span style="color:white;">싱싱 고대는</span> <strong><span style="color:#b80f0a;">건의사항을</span></strong> <span style="color:white;">기다리고 있습니다!</span>
+</div>
+<nav class="navbar navbar-toggleable-md navbar-light ">
+          
+             <div class="container">
+            <a class="navbar-brand" href="/"><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span style="color:#83b14e;">싱</span><span style="color:#617750;">싱</span><span style="color:#b80f0a;">고대</span></a>
+
+          <div class="collapse navbar-collapse offset-2 col-6">
+            <form class="form-inline my-2 my-lg-0 w-100">
+              <input class="form-control mr-lg-2 w-50" type="text" placeholder="검색하세요..">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+              <a href="/users/sign_in" class="mx-4">로그인</a><a href="/users/sign_out" class="logout">로그아웃</a>
+            </form>
+          </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/item_list">상품<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/basket">장바구니</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/information">건의사항</a>
+              </li>
+            </ul>
+               </div>
+        </nav>
+ <div class="footer-above d-flex justify-content-center" style="background-color:#83b14e; color:white;height:10px; padding-top:10px">
+        
+    </div>
+<div class="container mt-5">
+    <div class="alert alert-info text-center"  style="background-color:#466c33;color:white; "role="alert">
+      <strong>건의사항!!</strong> 무엇이든 물어봐 주세요!
+    </div>
+    <form class="offset-4 mt-5" action="/information_save" method="POST">
+      <div class="form-group">
+        <label class="text-center ">제목</label>
+        <input type="text" name="title" class="form-control w-50 contenttitle" placeholder="제목을 입력하세요..">
+      </div>
+      <div class="form-group">
+          <label class="text-center">카테고리</label>
+          <select class="form-control form-control-sm w-50" name="choice">
+            <option>배송관련</option>
+            <option>제품관련</option>
+            <option>환불/취소</option>
+          </select>
+      </div>
+      
+      <div class="form-group mt-5">
+        <label class="text-center" for="exampleTextarea">내용</label>
+        <textarea class="form-control w-75" name="content" placeholder="내용을 입력하세요.." id="exampleTextarea" rows="5"></textarea>
+      </div>
+      <button class="offset-8 btn btn-outline-success save" type="submit">게시하기</button>
+    </form>
+    
+</div>
+ <div class="footer-above d-flex justify-content-center mt-5" style="background-color:#83b14e; color:white;height:10px; padding-top:10px">
+</div>
+ <div class="footer-below d-flex justify-content-center " style="background-color:#466c33;color:white; height:10px; text-align: center;">
+     </div>
+     <div class="container">
+     <footer class="mt-5 mb-5" style="border-top-width:0px;">
+            <div class="ml-5 mt-3">
+                <a><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span class="green">싱싱</span><span class="red">고대</span></a>
+                <p>&copy; 2017 싱싱고대, All right reserved</p>
+                <p>세종특별자치시 세종로 2511 고려대학교 세종캠퍼스 LIKELION</p>
+                <p>☎ 044-864-0000</p>
+            </div>
+        </footer>
+        </div>
+<script>
+  
+  $(document).ready(function(){
+    var $save = $(".save");
+    var $contenttitle = $(".contenttitle");
+    var $form = $("form");
+    
+    $save.click(function(){
+      if($contenttitle.val().length > 0){
+        alert("글이 게시되었습니다.");
+      }
+      else if($contenttitle.val().length <= 0){
+        alert("제목은 필수 입력사항입니다.");
+        $form.attr("action","/information_write");
+        $form.attr("method","get");
+      }  
+      
+     
+    })
+  })
+  
+</script>

@@ -1,0 +1,47 @@
+<div class="container my-5">
+  <h2 class="text-center"><%= image_tag 'singsing.jpg', class:'mb-2 CI' %><span style="color:green">싱싱</span> <span style="color:red">고대</span> 로그인</h2>
+
+<div class="mt-5 offset-4">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, class:"w-50" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off", class:"w-50" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= render "devise/shared/links" %>
+    <%= f.submit "Log in", class:"btn btn-primary offset-4 col-2 login" %>
+  </div>
+<% end %>
+
+
+</div>
+
+  
+</div>
+<script>
+  
+  $(document).ready(function(){
+    
+    var $login = $(".login");
+    
+    
+    $login.click(function(){
+      alert("로그인 되었습니다. 환영합니다!");
+    })
+    
+  })
+  
+</script>

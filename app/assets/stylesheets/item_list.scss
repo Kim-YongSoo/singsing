@@ -1,0 +1,40 @@
+// Place all the styles related to the item_list controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron {
+    height:200px;
+}
+.explainpage {
+    margin:0px;
+}
+li a {
+    font-size: 15px;
+}
+.red{
+    color:red;
+}
+.green {
+    color:green;
+}
+.fruitname {
+    color:black;
+}
+footer {
+    height:100px;
+    border-top:2px solid green;
+}
+footer p {
+    margin-top:2px;
+    margin-bottom: 2px;
+}
+img {
+    width:100%;
+    height:200px;
+}
+img:hover {
+    opacity: 0.5;
+}
+.CI {
+    width:30px;
+    height:30px;
+}
